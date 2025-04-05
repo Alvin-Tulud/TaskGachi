@@ -6,8 +6,8 @@ public class TaskObject : ScriptableObject
 {
     public string Task_Name;
 
-    public DateTime Time_TotalSet;
-    public DateTime Time_Left;
+    public TimeSpan Time_TotalSet;
+    public TimeSpan Time_Left;
 
     public bool Task_Completed = false;
     public bool Task_Failed = false;
