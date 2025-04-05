@@ -1,11 +1,7 @@
 using System;
+using System.IO;
 using UnityEngine;
-
-[Serializable]
-public struct GachiStats {
-    public int health;
-    public string spritePath;
-}
+using static UnityEditor.U2D.ScriptablePacker;
 
 
 public class GachiData : MonoBehaviour
@@ -13,15 +9,24 @@ public class GachiData : MonoBehaviour
 
 
     string filepath = Application.persistentDataPath + "/" + "GachiData";
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
+
+    [SerializeField]
+    GachiStats gachi;
+
+
+    public void readGachiData() {
+        string json = File.ReadAllText(filepath);
+        gachi = JsonUtility.FromJson<GachiStats>(json);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public void writeGachiData() {
+        string json = JsonUtility.ToJson(gachi, true);
+        File.WriteAllText(filepath,json);
     }
+
+    [Serializable]
+    public struct GachiStats {
+        public int health;
+        public string spritePath;
+    }  
 }
