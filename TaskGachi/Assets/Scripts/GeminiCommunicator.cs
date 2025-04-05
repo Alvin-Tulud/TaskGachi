@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
 public class GeminiCommunicator : MonoBehaviour
 {
-    [SerializeField] private stirng gasURL;
+    [SerializeField] private string gasURL;
     [SerializeField] private string prompt;
 
     private IEnumerator SendDataToGAS()
@@ -16,7 +17,7 @@ public class GeminiCommunicator : MonoBehaviour
         yield return www.SendWebRequest();
         string response = "";
 
-        if(www.result == UnityWebRequest.Results.Success) 
+        if(www.result == UnityWebRequest.Result.Success) 
         {
             response = www.downloadHandler.text;
         }
