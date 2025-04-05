@@ -23,7 +23,7 @@ public class TaskAdder : MonoBehaviour
         //get the future time the task will be done at
         DateTime FutureTime = CurrentTIme.getCurrentTime() + timeset;
         //get value of how much time is left
-        object_to_make.Time_Left = FutureTime.Subtract(CurrentTIme.getCurrentTime());
+        object_to_make.Time_Deadline = FutureTime;
 
         //set completion states to false
         object_to_make.Task_Completed = false;
