@@ -1,20 +1,20 @@
 using UnityEngine;
 using System.Collections;
+using TaskData;
+using GachiData;
 
 public class Tester : MonoBehaviour 
 {
-
-    public TaskData taskManager;
-    public GachiData gachiManager;
     void Update() {
-        /*
+        
         if (Input.GetKey(KeyCode.A)) {
-            TaskList newList = {{"Doodle World"},{},{}};
+            TaskData.generateExample();
+            TaskData.writeTaskList();
         }
 
         if (Input.GetKey(KeyCode.D)) {
             
         }
-        */
+        
     }
 }

@@ -256,6 +256,83 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &587018230
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 587018234}
+  - component: {fileID: 587018233}
+  - component: {fileID: 587018232}
+  - component: {fileID: 587018231}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &587018231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 587018230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c56d2b5d4f949c941998f45b75ddc0bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gachi:
+    health: 0
+    spritePath: 
+--- !u!114 &587018232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 587018230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d3e018c127022044b175baf6e0ad7e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  list:
+    list: []
+--- !u!114 &587018233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 587018230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fb967b179aade6408fc926c96ec0976, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  taskManager: {fileID: 0}
+  gachiManager: {fileID: 0}
+--- !u!4 &587018234
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 587018230}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.16118783, y: -0.2759241, z: 0.00020250399}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1026245100
 GameObject:
   m_ObjectHideFlags: 0
@@ -285,8 +362,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66c713949fc3b344ab0e21185aa51d75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gasURL: https://script.google.com/macros/s/AKfycbztv7WCFTpPEnGqH_K8Mxpqy3j-Q-awtXadT2g2FMppMwr9Cnv4Uq2Vtvujd-SBCOQL/execKfycbw0UkHrMmOW4G98jsWF55WwSNjw02J1EP5KD3gkQtz7Sky9SAq5QfodwnID3cbc78at/exec
-  prompt: Describe the Big Chungus Meme
+  gasURL: https://script.google.com/macros/s/AKfycbyvxXqQ6imDjXg6BmPO9UXqARULEroTg9GuJiNBnFy9FPK01IkZALZSFfrsSmW9nfRu/exec
+  prompt: 
 --- !u!4 &1026245102
 Transform:
   m_ObjectHideFlags: 0
@@ -308,3 +385,4 @@ SceneRoots:
   m_Roots:
   - {fileID: 586292916}
   - {fileID: 1026245102}
+  - {fileID: 587018234}
