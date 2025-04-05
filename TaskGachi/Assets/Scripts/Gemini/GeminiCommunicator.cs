@@ -8,6 +8,13 @@ public class GeminiCommunicator : MonoBehaviour
     [SerializeField] private string gasURL;
     [SerializeField] private string prompt;
 
+
+    private void Update() {
+        if (Input.GetKey(KeyCode.UpArrow)) {
+            StartCoroutine(SendDataToGAS());
+        }
+    }
+
     private IEnumerator SendDataToGAS()
     {
         WWWForm form = new WWWForm();
