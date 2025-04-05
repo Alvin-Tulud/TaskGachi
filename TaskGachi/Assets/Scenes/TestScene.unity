@@ -268,6 +268,7 @@ GameObject:
   - component: {fileID: 587018233}
   - component: {fileID: 587018232}
   - component: {fileID: 587018231}
+  - component: {fileID: 587018235}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -287,9 +288,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c56d2b5d4f949c941998f45b75ddc0bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gachi:
-    health: 0
-    spritePath: 
 --- !u!114 &587018232
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -302,8 +300,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d3e018c127022044b175baf6e0ad7e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  list:
-    list: []
 --- !u!114 &587018233
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -316,8 +312,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fb967b179aade6408fc926c96ec0976, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  taskManager: {fileID: 0}
-  gachiManager: {fileID: 0}
 --- !u!4 &587018234
 Transform:
   m_ObjectHideFlags: 0
@@ -333,6 +327,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &587018235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 587018230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b255809c9db8cc44d99c996538c28c48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1026245100
 GameObject:
   m_ObjectHideFlags: 0
@@ -363,7 +369,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gasURL: https://script.google.com/macros/s/AKfycbyvxXqQ6imDjXg6BmPO9UXqARULEroTg9GuJiNBnFy9FPK01IkZALZSFfrsSmW9nfRu/exec
-  prompt: 
+  prompt: what color are apples usually?
 --- !u!4 &1026245102
 Transform:
   m_ObjectHideFlags: 0

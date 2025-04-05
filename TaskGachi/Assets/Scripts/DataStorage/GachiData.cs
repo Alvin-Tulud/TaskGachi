@@ -6,10 +6,15 @@ using static UnityEditor.U2D.ScriptablePacker;
 namespace GachiData {
     public class GachiData : MonoBehaviour
     {
-        string filepath = Application.persistentDataPath + "/" + "GachiData";
+        string filepath;
 
         [SerializeField]
         static GachiStats gachi;
+
+        private void Awake()
+        {
+            filepath = Application.persistentDataPath + "/" + "GachiData";
+        }
 
 
         public void readGachiData() {

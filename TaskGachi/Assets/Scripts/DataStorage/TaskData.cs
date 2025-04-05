@@ -1,95 +1,96 @@
 using System;
 using System.IO;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
-using static UnityEditor.U2D.ScriptablePacker;
+public class TaskData : MonoBehaviour
+{
+    static TaskData instance;
 
-/*
-namespace TaskData {
-    public class TaskData : MonoBehaviour
+    string filepath;
+
+    public static TaskListData TLData;
+
+    void Awake()
     {
-        string filepath = Application.persistentDataPath + "/" + "TaskData";
+        instance = this;
 
-        [SerializeField]
-        static TaskList list;
-
-        public void readTaskList() {
-            string json = File.ReadAllText(filepath);
-            list = JsonUtility.FromJson<TaskList>(json);
-        }
-
-        public void writeTaskList() {
-            string json = JsonUtility.ToJson(list, true);
-            File.WriteAllText(filepath,json);
-        }
-
-        public void generateExample() {
-            TaskList asks = new TaskList(); // Create an array with a fixed size of 5
-            asks.list = new Task[5];
-
-            tasks.list[0] = new Task
-            {
-                name = "Write Documentation",
-                totalSet = TimeSpan.FromHours(2),
-                Time_Left = DateTime.Now.AddHours(1),
-                Task_Completed = false,
-                Task_Failed = false
-            };
-
-            asks.list[1] = new Task
-            {
-                name = "Debug Feature X",
-                totalSet = TimeSpan.FromMinutes(45),
-                Time_Left = DateTime.Now.AddMinutes(30),
-                Task_Completed = false,
-                Task_Failed = false
-            };
-
-            asks.list[2] = new Task
-            {
-                name = "Client Meeting",
-                totalSet = TimeSpan.FromHours(1),
-                Time_Left = DateTime.Now.AddHours(2),
-                Task_Completed = false,
-                Task_Failed = false
-            };
-
-            asks.list[3] = new Task
-            {
-                name = "Refactor Code",
-                totalSet = TimeSpan.FromHours(3),
-                Time_Left = DateTime.Now.AddHours(2.5),
-                Task_Completed = false,
-                Task_Failed = false
-            };
-
-            asks.list[4] = new Task
-            {
-                name = "Database Migration",
-                totalSet = TimeSpan.FromMinutes(20),
-                Time_Left = DateTime.Now.AddMinutes(10),
-                Task_Completed = false,
-                Task_Failed = false
-            };
-
-            TaskData.list = asks;
-        }
-
-
-        [Serializable]
-        public struct Task {
-            public string name;
-            public TimeSpan totalSet;
-            public DateTime Time_Left;
-            public bool Task_Completed;
-            public bool Task_Failed;
-        }
-
-
-        [Serializable]
-        public struct TaskList {
-            public Task[] list;
-        }
+        filepath = Application.persistentDataPath + "/" + "TaskData";
     }
 
+    public static TaskData GetInstance()
+    {
+        return instance;
+    }
+
+    public List<TaskObject> readTaskList() {
+        string json = File.ReadAllText(filepath);
+        TLData = JsonUtility.FromJson<TaskListData>(json);
+
+        return TLData.list;
+    }
+
+    public void writeTaskList(List<TaskObject> list) {
+        string json = JsonUtility.ToJson(list, true);
+        File.WriteAllText(filepath,json);
+
+        Debug.Log(filepath);
+    }
+
+    public void generateExample() {
+        TaskListData tasks = new TaskListData();
+        tasks.list = new List<TaskObject>();
+
+        tasks.list.Add(new TaskObject
+        {
+            Task_Name = "Write Documentation",
+            Time_TotalSet = TimeSpan.FromHours(2),
+            Time_Deadline = DateTime.Now.AddHours(1),
+            Task_Completed = false,
+            Task_Failed = false
+        });
+
+        tasks.list.Add(new TaskObject
+        {
+            name = "Debug Feature X",
+            Time_TotalSet = TimeSpan.FromMinutes(45),
+            Time_Deadline = DateTime.Now.AddMinutes(30),
+            Task_Completed = false,
+            Task_Failed = false
+        });
+
+        tasks.list.Add(new TaskObject
+        {
+            name = "Client Meeting",
+            Time_TotalSet = TimeSpan.FromHours(1),
+            Time_Deadline = DateTime.Now.AddHours(2),
+            Task_Completed = false,
+            Task_Failed = false
+        });
+
+        tasks.list.Add(new TaskObject
+        {
+            name = "Refactor Code",
+            Time_TotalSet = TimeSpan.FromHours(3),
+            Time_Deadline = DateTime.Now.AddHours(2.5),
+            Task_Completed = false,
+            Task_Failed = false
+        });
+
+        tasks.list.Add(new TaskObject
+        {
+            name = "Database Migration",
+            Time_TotalSet = TimeSpan.FromMinutes(20),
+            Time_Deadline = DateTime.Now.AddMinutes(10),
+            Task_Completed = false,
+            Task_Failed = false
+        });
+
+        TaskData.TLData = tasks;
+    }
+
+    [Serializable]
+    public struct TaskListData {
+        public List<TaskObject> list;
+    }
 }
-*/
