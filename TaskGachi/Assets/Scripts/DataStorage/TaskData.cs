@@ -3,7 +3,7 @@ using System.IO;
 using UnityEngine;
 using static UnityEditor.U2D.ScriptablePacker;
 
-
+/*
 namespace TaskData {
     public class TaskData : MonoBehaviour
     {
@@ -92,3 +92,4 @@ namespace TaskData {
     }
 
 }
+*/
