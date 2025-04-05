@@ -34,5 +34,6 @@ public class GeminiCommunicator : MonoBehaviour
         }
 
         Debug.Log(response);
+        Debug.Log(www.downloadHandler.text);
     }
 }
