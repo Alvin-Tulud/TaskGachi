@@ -20,6 +20,7 @@ using UnityEngine;
             catch (Exception e) 
             { 
                 Debug.Log("No Data Found"); 
+                Debug.Log(e);
             }
         }
 
@@ -36,5 +37,10 @@ using UnityEngine;
         public List<TaskObject> getList() 
         {
             return TaskList;
+        }
+
+        public void setList(List<TaskObject> tasklist)
+        {
+            TaskList = tasklist;
         }
     }
