@@ -35,16 +35,16 @@ public class NotificationManager : MonoBehaviour
         identifier = AndroidNotificationCenter.SendNotification(notification, "dachi_channel");
     }
 
-    public void TaskNotification(System.DateTime deadline)
+    public void SmallTaskNotification(System.DateTime deadline)
     {
-        DateTime notifyTime = deadline.AddHours(-1);
+        DateTime notifyTime = deadline.AddMinutes(-5);
 
         if (notifyTime < DateTime.Now) { return; }
 
         AndroidNotification notification = new AndroidNotification()
         {
             Title = "Your Dachi beckons you!",
-            Text = "Come back pwease, one of your tasks is nearly up :3",
+            Text = "Come back pwease, one of your Small tasks is nearly up :3",
             SmallIcon = "default",
             LargeIcon = "default",
             FireTime = notifyTime,
@@ -53,16 +53,34 @@ public class NotificationManager : MonoBehaviour
         identifier = AndroidNotificationCenter.SendNotification(notification, "dachi_channel");
     }
 
-    public void TestTaskNotification(System.DateTime deadline)
+    public void MediumTaskNotification(System.DateTime deadline)
     {
-        DateTime notifyTime = deadline.AddSeconds(-15);
+        DateTime notifyTime = deadline.AddMinutes(-30);
 
         if (notifyTime < DateTime.Now) { return; }
 
         AndroidNotification notification = new AndroidNotification()
         {
             Title = "Your Dachi beckons you!",
-            Text = "Come back pwease, one of your tasks is nearly up :3",
+            Text = "Come back pwease, one of your Medium tasks is nearly up :3",
+            SmallIcon = "default",
+            LargeIcon = "default",
+            FireTime = notifyTime,
+        };
+
+        identifier = AndroidNotificationCenter.SendNotification(notification, "dachi_channel");
+    }
+
+    public void LargeTaskNotification(System.DateTime deadline)
+    {
+        DateTime notifyTime = deadline.AddHours(-1);
+
+        if (notifyTime < DateTime.Now) { return; }
+
+        AndroidNotification notification = new AndroidNotification()
+        {
+            Title = "Your Dachi beckons you!",
+            Text = "Come back pwease, one of your Large tasks is nearly up :3",
             SmallIcon = "default",
             LargeIcon = "default",
             FireTime = notifyTime,
